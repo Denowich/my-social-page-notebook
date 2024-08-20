@@ -19,17 +19,28 @@ function App() {
                         <div className='app-wrapper-content'>
                               <Routes>
                                     <Route
-                                          path='/profile'
+                                          exact
+                                          path='profile/*'
                                           element={<Profile />}
                                     />
                                     <Route
-                                          path='/dialogs'
+                                          exact
+                                          path='dialogs/*'
                                           element={<Dialogs />}
                                     />
-                                    <Route path='/news' element={<News />} />
-                                    <Route path='/music' element={<Music />} />
                                     <Route
-                                          path='/settings'
+                                          exact
+                                          path='news/*'
+                                          element={<News />}
+                                    />
+                                    <Route
+                                          exact
+                                          path='music/*'
+                                          element={<Music />}
+                                    />
+                                    <Route
+                                          exact
+                                          path='settings/*'
                                           element={<Settings />}
                                     />
                               </Routes>
