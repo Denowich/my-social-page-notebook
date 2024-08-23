@@ -3,10 +3,16 @@ import { Posts } from '../Posts/Posts';
 import style from './MyPosts.module.css';
 
 export const MyPosts = () => {
-      let postData = [
+      let posts = [
             { id: 1, message: 'Hi! My name is Den !', likesCount: '5' },
             { id: 2, message: "It's my first post !", likesCount: '10' },
+            { id: 3, message: "I'm learning  JS", likesCount: '6' },
+            { id: 4, message: 'Thanks !', likesCount: '3' },
       ];
+
+      let postsElements = posts.map((p) => (
+            <Posts message={p.message} likesCount={p.likesCount} />
+      ));
 
       return (
             <div className={style.myPosts}>
@@ -19,14 +25,8 @@ export const MyPosts = () => {
                   <div>
                         <button>Add post</button>
                   </div>
-                  <Posts
-                        message={postData[0].message}
-                        likesCount={postData[0].likesCount}
-                  />
-                  <Posts
-                        message={postData[1].message}
-                        likesCount={postData[1].likesCount}
-                  />
+
+                  {postsElements}
             </div>
       );
 };
