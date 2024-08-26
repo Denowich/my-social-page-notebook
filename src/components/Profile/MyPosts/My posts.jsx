@@ -7,16 +7,23 @@ export const MyPosts = (props) => {
             <Posts message={p.message} likesCount={p.likesCount} />
       ));
 
+      let newPostElement = React.createRef();
+
+      let addPost = () => {
+            let text = newPostElement.current.value;
+            alert(text);
+      };
+
       return (
             <div className={style.myPosts}>
                   <div>
                         <h3>My posts</h3>
                   </div>
                   <div>
-                        <textarea name='' id=''></textarea>
+                        <textarea ref={newPostElement}></textarea>
                   </div>
                   <div>
-                        <button>Add post</button>
+                        <button onClick={addPost}>Add post</button>
                   </div>
 
                   {postsElements}
